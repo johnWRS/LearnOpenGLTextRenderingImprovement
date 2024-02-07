@@ -285,7 +285,7 @@ void RenderText(Shader &shader, std::string text, float x, float y, float scale,
             // now advance cursors for next glyph (note that advance is number of 1/64 pixels)
             x += (ch.Advance >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64 (divide amount of 1/64th pixels by 64 to get amount of pixels))
             workingIndex++;
-            if (workingIndex == ARRAY_LIMIT - 1) {
+            if (workingIndex == ARRAY_LIMIT ) {
                 TextRenderCall(workingIndex, shader.ID);
                 workingIndex = 0;
             }
